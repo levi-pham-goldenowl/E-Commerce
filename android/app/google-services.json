@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "1021259785772",
+    "project_id": "e-conmmerce",
+    "storage_bucket": "e-conmmerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021259785772:android:d63fc996266bc720ac9389",
+        "android_client_info": {
+          "package_name": "com.goldenowl.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021259785772-2653lv9obdhq5b5csaugelgv6jhe0t77.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goldenowl.ecommerce",
+            "certificate_hash": "bb5cca881e9562122acb504bf553f24ee6b0ab56"
+          }
+        },
+        {
+          "client_id": "1021259785772-pjeqi5c2oho7ptdmab3t4g333tfumn1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goldenowl.ecommerce",
+            "certificate_hash": "83e09da546db1a5b9fe520d9d2bc75c736a2ee7e"
+          }
+        },
+        {
+          "client_id": "1021259785772-vvju4015agip58pgt13rgbishpehbnht.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goldenowl.ecommerce",
+            "certificate_hash": "ca2ce7ae57d74f2c4b1a764722a659ff4e1a5a05"
+          }
+        },
+        {
+          "client_id": "1021259785772-ms16afqvh6tje4bv53a19qi95ule4k9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUumFSlv2yqaBQ5jfbQ5ySfrLS2Qq8giY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021259785772-ms16afqvh6tje4bv53a19qi95ule4k9e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1021259785772-l006q2p8ddh8psm63kvg25elq3odh9nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goldenowl.ecommerce"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

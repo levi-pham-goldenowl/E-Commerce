@@ -1,0 +1,60 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Flutter
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Set up Flutter.
+      - name: Clone Flutter repository with master channel
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter doctor -v
+
+      - name: Install dependencies
+        run: flutter pub get
+
+
+      - name: Write .env
+        run: echo 'GOOGLE_API_KEY={{ secrets.GOOGLE_API_KEY }}' > .env
+      - name: Write .env.development
+        run: echo 'GOOGLE_API_KEY={{ secrets.GOOGLE_API_KEY }}' > .env.development
+      - name: Write .env.production
+        run: echo 'GOOGLE_API_KEY={{ secrets.GOOGLE_API_KEY }}' > .env.production
+
+      - name: Test package
+        run: flutter test
+        env:
+          FIREBASE_SERVICE_ACCOUNT_E_CONMMERCE: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_E_CONMMERCE }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          EXEC_ENV: 'github_actions'
+
+      - name: Setup Go environment
+        uses: actions/setup-go@v3.0.0 
+      # Uncomment this step to verify the use of 'dart format' on each commit.
+      # - name: Verify formatting
+      #   run: dart format --output=none --set-exit-if-changed .
+
+      # Consider passing '--fatal-infos' for slightly stricter analysis.
+      - name: Analyze project source
+        run: flutter analyze
+
+      # Your project will need to have tests in test/ and a dependency on
+      # package:test for this step to succeed. Note that Flutter projects will
+      # want to change this to 'flutter test'.
+      - name: Run tests
+        run: flutter test
